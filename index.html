@@ -3,14 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResQBlood - Blood Donation</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>ResQBlood - Blood Donation Platform</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1 class="logo">ResQBlood</h1>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button class="btnlogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <!-- Login Popup -->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="#" class="register">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
     <div class="container">
         <h1>ResQBlood - Blood Donation Platform</h1>
         <button class="sos-button" onclick="sendSOSAlert()">Send SOS Alert</button>
-        
+
         <h2>Register as a Donor</h2>
         <input type="text" id="name" placeholder="Full Name">
         <select id="bloodGroup">
@@ -25,7 +65,7 @@
         </select>
         <input type="text" id="location" placeholder="Your Location">
         <button onclick="registerDonor()">Register</button>
-        
+
         <h2>Find a Donor</h2>
         <select id="searchBloodGroup">
             <option value="A+">A+</option>
@@ -39,15 +79,18 @@
         </select>
         <input type="text" id="searchLocation" placeholder="Enter Location">
         <button onclick="findDonors()">Search</button>
-        
+
         <h2>Blood Bank Stock Monitoring</h2>
         <button onclick="checkBloodStock()">Check Stock</button>
-        
+
         <div class="donors-list">
             <h2>Donors List</h2>
             <div id="donorsList"></div>
         </div>
     </div>
-    <script src="/script.js"></script>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
